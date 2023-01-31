@@ -5,4 +5,9 @@ qa:
 prod:
 	terraform init && terraform workspace new prod || terraform workspace select prod && terraform apply -auto-approve 
 
- 
+destroy_dev:
+	terraform init && terraform workspace select dev && terraform destroy -auto-approve 
+destroy_qa:
+	terraform init && terraform workspace select qa && terraform destroy -auto-approve 
+destroy_prod:
+	terraform init && terraform workspace select prod && terraform destroy -auto-approve 
